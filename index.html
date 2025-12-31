@@ -3,104 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join Our Telegram | Instant Access</title>
+<title>Join Telegram | Premium Access</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f4f6f8;color:#222}
-.container{max-width:950px;margin:auto;padding:20px}
 
-.hero{text-align:center;padding:60px 20px}
+body{
+    background:#0b0f19;
+    color:#ffffff;
+}
+
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:20px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:70px 20px;
+}
 .hero h1{
-    font-size:3rem;
+    font-size:3.2rem;
     font-weight:900;
-    color:#0a66c2;
+    color:#00b4ff;
     margin-bottom:15px;
 }
 .hero h2{
     font-size:1.6rem;
     font-weight:800;
-    color:#111;
     margin-bottom:10px;
 }
 .hero p{
     font-size:1.2rem;
-    margin-bottom:30px;
-    color:#444;
+    color:#cfd3ff;
+    margin-bottom:35px;
 }
 
-.btn{
-    display:inline-block;
-    background:#0088cc;
+/* STYLISH TELEGRAM BUTTON */
+.tg-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    background:linear-gradient(135deg,#2AABEE,#229ED9);
     color:#fff;
-    padding:18px 40px;
-    font-size:1.4rem;
-    font-weight:900;
+    padding:18px 38px;
+    border-radius:50px;
     text-decoration:none;
-    border-radius:8px;
+    font-size:1.3rem;
+    font-weight:900;
+    box-shadow:0 0 25px rgba(42,171,238,.6);
+    transition:all .3s ease;
+    position:relative;
+    overflow:hidden;
 }
-.btn:hover{background:#006699}
+.tg-btn::before{
+    content:'';
+    position:absolute;
+    width:120%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+    top:0;
+    left:-120%;
+    transition:.5s;
+}
+.tg-btn:hover::before{left:120%}
+.tg-btn:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 40px rgba(42,171,238,.9);
+}
+.tg-icon{
+    font-size:1.9rem;
+    animation:fly 1.5s infinite alternate;
+}
+@keyframes fly{
+    from{transform:translateX(0)}
+    to{transform:translateX(6px)}
+}
+.tg-text small{
+    display:block;
+    font-size:.7rem;
+    opacity:.85;
+}
+.tg-text b{
+    font-size:1.25rem;
+}
 
-/* Ad Highlight Lines */
+/* AD LINES */
 .ad-lines{
-    background:#fff;
-    padding:25px;
-    margin:40px 0;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    background:#12182a;
+    padding:30px;
+    border-radius:12px;
+    margin:45px 0;
+    box-shadow:0 0 25px rgba(0,0,0,.4);
 }
 .ad-lines p{
-    font-size:1.3rem;
-    font-weight:800;
-    margin:12px 0;
+    font-size:1.35rem;
+    font-weight:900;
+    margin:14px 0;
 }
 
-/* Steps */
+/* STEPS */
 .steps{
-    margin-top:50px;
+    margin-top:60px;
 }
 .steps h2{
     text-align:center;
-    font-size:2.2rem;
-    color:#0a66c2;
-    margin-bottom:30px;
+    font-size:2.3rem;
     font-weight:900;
+    color:#00b4ff;
+    margin-bottom:35px;
 }
 .step-box{
     display:flex;
-    align-items:flex-start;
-    background:#fff;
+    gap:20px;
+    background:#12182a;
     padding:25px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,.06);
+    border-radius:12px;
+    margin-bottom:22px;
+    box-shadow:0 0 20px rgba(0,0,0,.35);
 }
 .step-number{
-    font-size:2.2rem;
+    font-size:2.4rem;
     font-weight:900;
-    color:#0088cc;
-    margin-right:20px;
+    color:#00b4ff;
 }
 .step-box h3{
     font-size:1.3rem;
     margin-bottom:6px;
 }
 .step-box p{
-    color:#555;
+    color:#cfd3ff;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
     text-align:center;
+    margin-top:60px;
     padding:20px;
-    margin-top:50px;
-    color:#777;
     font-size:.9rem;
+    color:#9aa0ff;
+}
+
+/* STICKY TELEGRAM BUTTON */
+.tg-sticky{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    background:linear-gradient(135deg,#2AABEE,#229ED9);
+    color:#fff;
+    padding:14px 30px;
+    font-size:1.1rem;
+    font-weight:900;
+    border-radius:40px;
+    text-decoration:none;
+    box-shadow:0 0 25px rgba(42,171,238,.8);
+    z-index:9999;
 }
 
 @media(max-width:768px){
-.hero h1{font-size:2.4rem}
-.hero h2{font-size:1.3rem}
+    .hero h1{font-size:2.5rem}
+    .hero h2{font-size:1.3rem}
 }
 </style>
 </head>
@@ -110,23 +175,27 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-    <h1>🔥 JOIN OUR TELEGRAM NOW</h1>
-    <h2>Exclusive Telegram Community</h2>
-    <p>Instant updates • Daily value • No spam 🚀</p>
+    <h1>🔥 JOIN OUR TELEGRAM</h1>
+    <h2>Premium & Exclusive Community</h2>
+    <p>Daily updates • Fast alerts • No spam 🚀</p>
 
-    <a href="https://t.me/YOUR_CHANNEL_LINK" class="btn" target="_blank">
-        JOIN TELEGRAM
+    <a href="https://t.me/YOUR_CHANNEL_LINK" class="tg-btn" target="_blank">
+        <span class="tg-icon">✈️</span>
+        <span class="tg-text">
+            <small>Join on</small>
+            <b>Telegram</b>
+        </span>
     </a>
 </section>
 
-<!-- AD LINES (BOLD FRONT) -->
+<!-- AD LINES -->
 <section class="ad-lines">
-    <p>✅ Join Now — <b>Free Signals & Daily Updates!</b></p>
-    <p>✅ Exclusive Telegram Community — <b>Get Access!</b></p>
-    <p>✅ Only <b>500 Seats Left</b> — Tap to Join on Telegram</p>
+    <p>✅ Join Now — <b>Free Signals & Daily Updates</b></p>
+    <p>✅ Exclusive Telegram Community — <b>Limited Access</b></p>
+    <p>✅ Only <b>500 Seats Left</b> — Tap to Join</p>
 </section>
 
-<!-- STEP BY STEP -->
+<!-- STEPS -->
 <section class="steps">
     <h2>📌 How to Join (Step by Step)</h2>
 
@@ -134,15 +203,15 @@ footer{
         <div class="step-number">1</div>
         <div>
             <h3>Click Join Button</h3>
-            <p>Tap on the “Join Telegram” button above to open our official Telegram channel.</p>
+            <p>Tap the Telegram button to open our official channel.</p>
         </div>
     </div>
 
     <div class="step-box">
         <div class="step-number">2</div>
         <div>
-            <h3>Open in Telegram App</h3>
-            <p>If asked, choose Telegram app or browser — make sure you are logged in.</p>
+            <h3>Open in Telegram</h3>
+            <p>Login to Telegram app or browser if required.</p>
         </div>
     </div>
 
@@ -150,14 +219,8 @@ footer{
         <div class="step-number">3</div>
         <div>
             <h3>Start Receiving Updates</h3>
-            <p>That’s it! You’ll start getting instant updates, tips & alerts directly.</p>
+            <p>You’ll instantly receive premium updates & alerts.</p>
         </div>
-    </div>
-
-    <div style="text-align:center;margin-top:30px;">
-        <a href="https://t.me/YOUR_CHANNEL_LINK" class="btn" target="_blank">
-            🚀 GET INSTANT ACCESS
-        </a>
     </div>
 </section>
 
@@ -166,5 +229,11 @@ footer{
 </footer>
 
 </div>
+
+<!-- STICKY BUTTON -->
+<a href="https://t.me/YOUR_CHANNEL_LINK" class="tg-sticky" target="_blank">
+    🚀 Join Telegram
+</a>
+
 </body>
 </html>
