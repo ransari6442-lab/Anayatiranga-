@@ -16,11 +16,11 @@ body{
 .container{
     max-width:420px;
     margin:auto;
-    padding:25px 18px 120px;
+    padding:25px 18px 160px; /* bottom space for sticky */
     text-align:center;
 }
 
-/* TITLE ROW */
+/* TITLE */
 .title-row{
     display:flex;
     align-items:center;
@@ -29,7 +29,6 @@ body{
     margin-top:30px;
 }
 
-/* CIRCULAR IMAGE (EDITED LOOK) */
 .title-row img{
     width:42px;
     height:42px;
@@ -39,7 +38,6 @@ body{
     box-shadow:0 0 12px rgba(255,45,45,.9);
 }
 
-/* 3D RED TITLE */
 .hero-title{
     font-size:1.7rem;
     font-weight:900;
@@ -52,52 +50,40 @@ body{
         0 0 20px rgba(255,45,45,.9);
 }
 
-/* SUB TEXT */
 .sub{
     margin-top:14px;
     font-size:1.05rem;
     color:#cfd3ff;
 }
 
-/* LOADING */
-.loading{
-    margin-top:18px;
-    color:#9aa0ff;
-    font-size:.95rem;
-}
-
-/* TIMER */
-.timer{
-    margin-top:10px;
-    font-size:1.1rem;
-    color:#ffd166;
-    font-weight:900;
-}
-
-/* BUTTON */
+/* NORMAL BUTTONS */
 .btn{
-    margin-top:28px;
-    display:block;
-    background:#1f3f5b;
-    color:#fff;
-    padding:16px;
-    border-radius:40px;
-    font-size:1.1rem;
-    font-weight:800;
+    margin-top:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:64px;
+    border-radius:50px;
+    font-size:1.15rem;
+    font-weight:900;
+    letter-spacing:.5px;
     text-decoration:none;
-    opacity:.4;
-    pointer-events:none;
-    transition:.3s;
+    color:#fff;
+    transition:.3s ease;
 }
 
-.btn.active{
-    background:linear-gradient(135deg,#2AABEE,#229ED9);
-    opacity:1;
-    pointer-events:auto;
-    box-shadow:0 0 25px rgba(42,171,238,.8);
+.btn.primary{
+    background:linear-gradient(135deg,#2AABEE,#1b87c9);
+    box-shadow:0 0 25px rgba(42,171,238,.9);
 }
 
-/* INFO BOX */
+.btn.secondary{
+    background:linear-gradient(135deg,#ff2d2d,#b80000);
+    box-shadow:0 0 25px rgba(255,45,45,.9);
+}
+
+/* INFO */
 .info{
     margin-top:40px;
     background:#0d1326;
@@ -111,6 +97,36 @@ body{
     font-size:1.05rem;
     font-weight:700;
 }
+
+/* 🔥 STICKY BOTTOM BUTTON */
+.sticky-join{
+    position:fixed;
+    bottom:12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(100% - 24px);
+    max-width:420px;
+    height:64px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#2AABEE,#229ED9);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+    font-weight:900;
+    color:#fff;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 0 35px rgba(42,171,238,1);
+    animation:pulse 1.8s infinite;
+}
+
+/* PULSE */
+@keyframes pulse{
+    0%{box-shadow:0 0 20px rgba(42,171,238,.6)}
+    50%{box-shadow:0 0 40px rgba(42,171,238,1)}
+    100%{box-shadow:0 0 20px rgba(42,171,238,.6)}
+}
 </style>
 </head>
 
@@ -118,10 +134,8 @@ body{
 
 <div class="container">
 
-    <!-- TITLE WITH IMAGE -->
     <div class="title-row">
-        <!-- 🔴 CHANGE IMAGE LINK HERE -->
-        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png" alt="Profile">
+        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png">
         <div class="hero-title">ANAYA TIRANGA VIP SHOT</div>
     </div>
 
@@ -129,21 +143,14 @@ body{
         Free VIP Channel • Sure Shots • Loss Recovery
     </div>
 
-    <div class="loading">
-        Please wait… your VIP access is loading ⏳
-    </div>
-
-    <div class="timer">
-        Ad ends in <span id="count">10</span> sec
-    </div>
-
-    <!-- BUTTON -->
-    <!-- 🔴 CHANGE TELEGRAM LINK HERE -->
-    <a href="https://t.me/+SCurUmTWPW0xYzI1" id="joinBtn" class="btn" target="_blank">
-        🚀 Join Telegram Now
+    <a href="https://t.me/+SCurUmTWPW0xYzI1" class="btn primary" target="_blank">
+        🚀 JOIN TELEGRAM VIP NOW
     </a>
 
-    <!-- INFO -->
+    <a href="https://t.me/+SCurUmTWPW0xYzI1" class="btn secondary" target="_blank">
+        🔥 JOIN BACKUP CHANNEL
+    </a>
+
     <div class="info">
         <p>✅ Free VIP Telegram Channel</p>
         <p>✅ Sure Shots + Recovery Strategy</p>
@@ -152,24 +159,13 @@ body{
 
 </div>
 
-<script>
-let time = 10;
-const count = document.getElementById("count");
-const btn = document.getElementById("joinBtn");
-
-const timer = setInterval(()=>{
-    time--;
-    count.innerText = time;
-    if(time <= 0){
-        clearInterval(timer);
-        btn.classList.add("active");
-    }
-},1000);
-</script>
+<!-- 🔥 STICKY JOIN BUTTON -->
+<a href="https://t.me/+SCurUmTWPW0xYzI1" class="sticky-join" target="_blank">
+    🚀 JOIN TELEGRAM VIP
+</a>
 
 </body>
 </html>
-
 
 
 
