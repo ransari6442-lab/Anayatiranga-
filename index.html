@@ -29,13 +29,14 @@ body{
     margin-top:30px;
 }
 
-/* SMALL CIRCLE IMAGE */
+/* CIRCULAR IMAGE (EDITED LOOK) */
 .title-row img{
     width:42px;
     height:42px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid #ff2d2d;
+    box-shadow:0 0 12px rgba(255,45,45,.9);
 }
 
 /* 3D RED TITLE */
@@ -63,6 +64,14 @@ body{
     margin-top:18px;
     color:#9aa0ff;
     font-size:.95rem;
+}
+
+/* TIMER */
+.timer{
+    margin-top:10px;
+    font-size:1.1rem;
+    color:#ffd166;
+    font-weight:900;
 }
 
 /* BUTTON */
@@ -102,14 +111,6 @@ body{
     font-size:1.05rem;
     font-weight:700;
 }
-
-/* TIMER */
-.timer{
-    margin-top:10px;
-    font-size:1.1rem;
-    color:#ffd166;
-    font-weight:900;
-}
 </style>
 </head>
 
@@ -117,9 +118,10 @@ body{
 
 <div class="container">
 
-    <!-- TITLE -->
+    <!-- TITLE WITH IMAGE -->
     <div class="title-row">
-        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png" alt="logo">
+        <!-- 🔴 CHANGE IMAGE LINK HERE -->
+        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png" alt="Profile">
         <div class="hero-title">ANAYA TIRANGA VIP SHOT</div>
     </div>
 
@@ -136,6 +138,7 @@ body{
     </div>
 
     <!-- BUTTON -->
+    <!-- 🔴 CHANGE TELEGRAM LINK HERE -->
     <a href="https://t.me/+SCurUmTWPW0xYzI1" id="joinBtn" class="btn" target="_blank">
         🚀 Join Telegram Now
     </a>
@@ -160,13 +163,14 @@ const timer = setInterval(()=>{
     if(time <= 0){
         clearInterval(timer);
         btn.classList.add("active");
-        btn.innerHTML = "🚀 Join Telegram Now";
     }
 },1000);
 </script>
 
 </body>
 </html>
+
+
 
 
 
