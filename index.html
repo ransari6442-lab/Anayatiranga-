@@ -25,54 +25,67 @@ body{
     padding:60px 10px;
 }
 
+/* TITLE ROW */
+.title-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+}
+
+/* PROFILE IMAGE */
+.title-wrap img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #00d4ff;
+    box-shadow:0 0 12px rgba(0,212,255,.9);
+    animation:pulseImg 1.6s infinite;
+}
+
+/* IMAGE PULSE */
+@keyframes pulseImg{
+    0%{transform:scale(1);box-shadow:0 0 12px rgba(0,212,255,.7)}
+    50%{transform:scale(1.12);box-shadow:0 0 25px rgba(0,212,255,1)}
+    100%{transform:scale(1)}
+}
+
 /* 3D TEXT */
 .hero h1{
-    font-size:2.8rem;
+    font-size:2.4rem;
     font-weight:900;
     text-transform:uppercase;
     color:#00d4ff;
-    margin-bottom:12px;
     text-shadow:
         2px 2px 0 #0077b6,
         4px 4px 0 #005a94,
         0 0 30px rgba(0,212,255,.9);
     animation:glow3d 2s infinite alternate;
 }
+
 @keyframes glow3d{
-    from{
-        text-shadow:2px 2px 0 #0077b6,0 0 15px rgba(0,212,255,.6);
-    }
-    to{
-        text-shadow:5px 5px 0 #00b4ff,0 0 35px rgba(0,212,255,1);
-    }
+    from{ text-shadow:2px 2px 0 #0077b6,0 0 15px rgba(0,212,255,.6);}
+    to{ text-shadow:5px 5px 0 #00b4ff,0 0 35px rgba(0,212,255,1);}
+}
+
+/* VERIFIED ICON */
+.verified{
+    color:#1da1f2;
+    font-size:1.3rem;
+    margin-left:4px;
+    filter:drop-shadow(0 0 6px rgba(29,161,242,.9));
 }
 
 .hero h2{
-    font-size:1.25rem;
+    font-size:1.2rem;
     color:#cfd3ff;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 .hero p{
     color:#aab0ff;
     margin-bottom:22px;
-}
-
-/* COUNTDOWN */
-.countdown-box{
-    background:#12182a;
-    border-radius:12px;
-    padding:20px;
-    margin:22px auto;
-    max-width:320px;
-}
-.countdown-box h3{
-    font-size:1.05rem;
-    margin-bottom:8px;
-}
-#countdown{
-    font-size:2.4rem;
-    font-weight:900;
-    color:#00ffcc;
 }
 
 /* TELEGRAM BUTTON */
@@ -88,7 +101,7 @@ body{
     padding:16px;
     border-radius:50px;
     text-decoration:none;
-    font-size:1.2rem;
+    font-size:1.15rem;
     font-weight:900;
     opacity:.5;
     pointer-events:none;
@@ -97,9 +110,9 @@ body{
 .tg-btn.active{
     opacity:1;
     pointer-events:auto;
-    animation:pulse 1.4s infinite;
+    animation:pulseBtn 1.4s infinite;
 }
-@keyframes pulse{
+@keyframes pulseBtn{
     0%{transform:scale(1)}
     50%{transform:scale(1.06)}
     100%{transform:scale(1)}
@@ -118,16 +131,35 @@ body{
     margin:10px 0;
 }
 
+/* TIMER LAST */
+.countdown-box{
+    background:#12182a;
+    border-radius:12px;
+    padding:18px;
+    margin:35px auto 0;
+    max-width:320px;
+}
+.countdown-box h3{
+    font-size:1.05rem;
+    margin-bottom:6px;
+}
+#countdown{
+    font-size:2.3rem;
+    font-weight:900;
+    color:#00ffcc;
+}
+
 /* FOOTER */
 footer{
-    margin-top:40px;
+    margin-top:35px;
     font-size:.85rem;
     color:#9aa0ff;
 }
 
 /* MOBILE */
 @media(max-width:600px){
-    .hero h1{font-size:2.1rem}
+    .hero h1{font-size:1.9rem}
+    .title-wrap img{width:36px;height:36px}
 }
 </style>
 </head>
@@ -137,18 +169,25 @@ footer{
 <div class="container">
 
 <section class="hero">
-    <h1>ANAYA TIRANGA VIP SHOT</h1>
+
+    <!-- TITLE WITH IMAGE + VERIFIED -->
+    <div class="title-wrap">
+        <!-- ✅ AAPKI IMAGE -->
+        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png" alt="VIP">
+
+        <h1>
+            ANAYA TIRANGA VIP SHOT
+            <span class="verified">✔</span>
+        </h1>
+    </div>
+
     <h2>Free VIP Channel • Sure Shots • Loss Recovery</h2>
     <p>Please wait… your VIP access is loading ⏳</p>
-
-    <div class="countdown-box">
-        <h3>Ad ends in</h3>
-        <div id="countdown">10</div>
-    </div>
 
     <a id="tgButton" href="https://t.me/+SCurUmTWPW0xYzI1" class="tg-btn" target="_blank">
         🚀 Join Telegram Now
     </a>
+
 </section>
 
 <section class="ad-lines">
@@ -156,6 +195,12 @@ footer{
     <p>✅ Sure Shots + Recovery Strategy</p>
     <p>✅ ₹1000 Joining Bonus</p>
 </section>
+
+<!-- TIMER LAST -->
+<div class="countdown-box">
+    <h3>Ad ends in</h3>
+    <div id="countdown">10</div>
+</div>
 
 <footer>
     © 2025 ANAYA TIRANGA VIP SHOT | All Rights Reserved
@@ -187,4 +232,5 @@ const timer = setInterval(() => {
 
 </body>
 </html>
+
 
