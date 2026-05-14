@@ -3,191 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANAYA TIRANGA VIP </title>
-    
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1205629174994469');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1205629174994469&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<title>IndianWin</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
 body{
-    background:#050914;
-    color:#fff;
+  background: radial-gradient(circle at top, #2a0000, #0b0b0b 70%);
+  color:#fff;
+  display:flex;
+  justify-content:center;
 }
 
 .container{
-    max-width:420px;
-    margin:auto;
-    padding:25px 18px 160px;
-    text-align:center;
+  width:100%;
+  max-width:420px;
+  padding:12px;
+}
+
+/* BADGE */
+.badge{
+  background:linear-gradient(90deg,#ff0000,#ff4d4d);
+  text-align:center;
+  padding:12px;
+  font-weight:800;
+  border-radius:40px;
+  margin:10px 0;
+}
+
+/* IMAGE */
+.banner img{
+  width:100%;
+  border-radius:16px;
+  border:2px solid rgba(255,0,0,0.4);
+  margin:12px 0;
+  display:block;
 }
 
 /* TITLE */
-.title-row{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:30px;
+h1{
+  text-align:center;
+  font-size:32px;
+  margin:10px 0;
+  font-weight:900;
 }
 
-.title-row img{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid #ff2d2d;
-    box-shadow:0 0 12px rgba(255,45,45,.9);
+h1 span{
+  color:#ff1a1a;
+  display:block;
 }
 
-.hero-title{
-    font-size:1.7rem;
-    font-weight:900;
-    color:#ff2d2d;
-    white-space:nowrap;
-    text-shadow:
-        1px 1px 0 #b30000,
-        2px 2px 0 #8f0000,
-        3px 3px 0 #6b0000,
-        0 0 20px rgba(255,45,45,.9);
-}
-
+/* TEXT */
 .sub{
-    margin-top:14px;
-    font-size:1.05rem;
-    color:#cfd3ff;
+  text-align:center;
+  color:#ddd;
+  margin-bottom:15px;
+  font-size:14px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
-    margin-top:26px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  display:block;
+  text-align:center;
+  background:linear-gradient(180deg,#ff1a1a,#b30000);
+  padding:16px;
+  border-radius:14px;
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+  text-decoration:none;
+  margin:12px 0;
+}
+
+/* SMALL TEXT */
+.small{
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
+}
+
+/* PROOF */
+.section-title{
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  margin:15px 0 5px;
+}
+
+.proof{
+  display:flex;
+  gap:10px;
+}
+
+.proof img{
+  width:50%;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .proof{
+    flex-direction:column;
+  }
+  .proof img{
     width:100%;
-    height:64px;
-    border-radius:50px;
-    font-size:1.15rem;
-    font-weight:900;
-    letter-spacing:.5px;
-    text-decoration:none;
-    color:#fff;
-    transition:.3s ease;
-}
-
-.btn.primary{
-    background:linear-gradient(135deg,#2AABEE,#1b87c9);
-    box-shadow:0 0 30px rgba(42,171,238,.9);
-}
-
-.btn.secondary{
-    background:linear-gradient(135deg,#ff2d2d,#b80000);
-    box-shadow:0 0 30px rgba(255,45,45,.9);
-}
-
-/* INFO */
-.info{
-    margin-top:40px;
-    background:#0d1326;
-    border-radius:16px;
-    padding:25px;
-    box-shadow:0 0 20px rgba(0,0,0,.4);
-}
-
-.info p{
-    margin:14px 0;
-    font-size:1.05rem;
-    font-weight:700;
-}
-
-/* 🔥 STICKY BOTTOM BUTTON */
-.sticky-join{
-    position:fixed;
-    bottom:12px;
-    left:50%;
-    transform:translateX(-50%);
-    width:calc(100% - 24px);
-    max-width:420px;
-    height:64px;
-    border-radius:50px;
-    background:linear-gradient(135deg,#2AABEE,#229ED9);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.2rem;
-    font-weight:900;
-    color:#fff;
-    text-decoration:none;
-    z-index:999;
-    box-shadow:0 0 40px rgba(42,171,238,1);
-    animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-    0%{box-shadow:0 0 20px rgba(42,171,238,.6)}
-    50%{box-shadow:0 0 45px rgba(42,171,238,1)}
-    100%{box-shadow:0 0 20px rgba(42,171,238,.6)}
+  }
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="title-row">
-        <img src="https://i.ibb.co/7NZC3vYj/Screenshot-2026-01-01-102527.png" alt="Profile">
-        <div class="hero-title">ANAYA TIRANGA VIP SHOT</div>
-    </div>
+  <div class="badge">★ INDIA'S #1 GAMING PLATFORM ★</div>
 
-    <div class="sub">
-        Free VIP Channel • Sure Shots • Loss Recovery
-    </div>
+  <!-- MAIN IMAGE -->
+  <div class="banner">
+    <img src="https://i.ibb.co/JRPNQfFk/IMG-20260514-212432-496.png" alt="main banner">
+  </div>
 
-    <a href="https://t.me/+VSjv204lWGU3MDg1" class="btn primary" target="_blank">
-        🚀 JOIN TELEGRAM VIP NOW
-    </a>
+  <h1>WELCOME TO <span>INDIANWIN</span></h1>
 
-    <a href="https://t.me/+VSjv204lWGU3MDg1" class="btn secondary" target="_blank">
-        🔥 JOIN BACKUP CHANNEL
-    </a>
+  <p class="sub">Join 25,000+ players winning big every day 🏆</p>
 
-    <div class="info">
-        <p>✅ Free VIP Telegram Channel</p>
-        <p>✅ Sure Shots + Recovery Strategy</p>
-        <p>✅ ₹1000 Joining Bonus</p>
-    </div>
+  <!-- REGISTER BUTTON (LINK ADDED) -->
+  <a class="btn" href="https://indianwingame.online/#/register?invitationCode=848887739646" target="_blank">
+    REGISTER NOW →
+  </a>
+
+  <p class="small">🔒 Safe • Instant Access • 24/7 Support</p>
+
+  <div class="section-title">🛡 REAL WITHDRAWAL PROOF</div>
+
+  <div class="proof">
+    <img src="https://i.ibb.co/BKQVx0Ht/Screenshot-2026-05-12-15-32-02-34-40deb401b9ffe8e1df2f1cc5ba480b12-jpg.jpg" alt="proof1">
+    <img src="https://i.ibb.co/5XqzXMwX/Screenshot-2026-05-10-22-23-46-34-40deb401b9ffe8e1df2f1cc5ba480b12-jpg.jpg" alt="proof2">
+  </div>
+
+  <!-- BONUS BUTTON (LINK ADDED) -->
+  <a class="btn" href="https://indianwingame.online/#/register?invitationCode=848887739646" target="_blank">
+    CLAIM YOUR BONUS →
+  </a>
 
 </div>
 
-<!-- 🔥 STICKY JOIN BUTTON -->
-<a href="https://t.me/+VSjv204lWGU3MDg1" class="sticky-join" target="_blank">
-    🚀 JOIN TELEGRAM VIP
-</a>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
